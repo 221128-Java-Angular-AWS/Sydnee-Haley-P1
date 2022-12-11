@@ -8,10 +8,6 @@ import java.util.Properties;
 public class ConnectionManager {
     public static Connection connection;
 
-    public ConnectionManager(){
-
-    }
-
     public static void getConnection() {
         if (connection == null) {
             connect();
@@ -41,10 +37,4 @@ public class ConnectionManager {
     System.out.println("Connected successfully");
 }
     }
-
-    public static void main(String[] args){
-        ConnectionManager.getConnection();
-    }
-
-
 }
