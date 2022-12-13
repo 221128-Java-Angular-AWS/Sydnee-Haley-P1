@@ -1,4 +1,4 @@
-package org.example.persistence;
+package com.sydneehaley.persistence;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
@@ -8,11 +8,12 @@ import java.util.Properties;
 public class ConnectionManager {
     public static Connection connection;
 
-    public static void getConnection() {
+    public static Connection getConnection() {
         if (connection == null) {
             connect();
         }
-    }
+        return connection;
+    };
 
     private static void connect() {
         try {
