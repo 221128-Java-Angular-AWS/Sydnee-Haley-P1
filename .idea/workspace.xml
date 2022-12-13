@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5cc199fd-4cb6-457e-99d9-baa99aea819b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/pojos/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/AccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistence/AccountDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/AccountDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistence/AdminDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/AdminDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistence/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/ConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistence/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/TicketDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistence/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/Account.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/pojos/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/Tickets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/pojos/Tickets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pojos/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/pojos/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
