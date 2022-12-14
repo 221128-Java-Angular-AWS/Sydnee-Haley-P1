@@ -1,4 +1,15 @@
 package com.sydneehaley.servlets;
 
-public class Listener {
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+
+public class Listener implements ServletContextListener {
+
+    public void contextInitialized(ServletContextEvent sce) {
+    }
+
+
+    public void contextDestroyed(ServletContextEvent sce) {
+
+    }
 }

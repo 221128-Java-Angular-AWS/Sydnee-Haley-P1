@@ -13,6 +13,16 @@
 
 
     <listener>
-        <listener-class>com.revature.servlet.DependencyLoaderListener</listener-class>
+        <listener-class>com.sydneehaley.servlets.Listener</listener-class>
     </listener>
+
+    <servlet>
+        <servlet-name>accountServlet</servlet-name>
+        <servlet-class>com.sydneehaley.servlets.AccountServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>accountServlet</servlet-name>
+        <url-pattern>/accounts</url-pattern>
+    </servlet-mapping>
 </web-app>

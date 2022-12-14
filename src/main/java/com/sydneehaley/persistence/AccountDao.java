@@ -15,12 +15,10 @@ public class AccountDao {
 
     public void createAccount(Account account) {
         try {
-            String sqlAccount = "INSERT INTO Account (account_id, accessLevel, email, first_name, last_name, password ) VALUES (?, ?, ?, ?, ?)";
+            String sqlAccount = "INSERT INTO account (access_token, email, password ) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement pstmt = connection.prepareStatement(sqlAccount, Statement.RETURN_GENERATED_KEYS);
-            pstmt.setString(1, account.getAccessLevel());
+            pstmt.setBoolean(1, account.getAccessToken());
             pstmt.setString(2, account.getEmail());
-            pstmt.setString(4, account.getFirstName());
-            pstmt.setString(4, account.getLastName());
             pstmt.setString(3, account.getPassword());
 
             pstmt.executeUpdate();
@@ -36,13 +34,13 @@ public class AccountDao {
 
     public Set<Account> getAllAccounts() {
         try {
-            String sql = "SELECT * FROM Accounts";
+            String sql = "SELECT * FROM account";
             PreparedStatement pstmt = connection.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
             Set<Account> results = new HashSet<>();
             while(rs.next()) {
-                Account account = new Account(rs.getString("access_level"), rs.getString("account_id"),
-                        rs.getString("email"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("password"));
+                Account account = new Account(rs.getString("id"), rs.getBoolean("access_token"),
+                        rs.getString("email"), rs.getString("password"));
                 results.add(account);
             }
 

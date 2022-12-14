@@ -3,49 +3,29 @@ package com.sydneehaley.pojos;
 import java.util.Objects;
 
 public class Account {
-    private String accountId;
-    private String firstName;
-    private String lastName;
+    private String account_id;
     private String email;
     private String password;
-    private String accessLevel;
+    private Boolean access_token;
 
 
     public Account() {
     }
 
-    public Account(String accessLevel, String accountId, String firstName, String lastName, String email, String password) {
-        this.accountId = accountId;
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Account(String account_id, Boolean access_token, String email, String password) {
+        this.account_id = account_id;
+        this.access_token = access_token;
         this.email = email;
         this.password = password;
-        this.accessLevel = accessLevel;
     }
 
 
     public String getAccountId() {
-        return accountId;
+        return account_id;
     }
 
-    public void setAccountId(String accountId) {
-        this.accountId = accountId;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setAccountId(String account_id) {
+        this.account_id = account_id;
     }
 
     public String getEmail() {
@@ -64,15 +44,15 @@ public class Account {
         this.password = password;
     }
 
-    public String getAccessLevel() {
-        return accessLevel;
+    public Boolean getAccessToken() {
+        return access_token;
     }
 
-    public void setAccessLevel(String accessLevel) {
-        this.accessLevel = accessLevel;
+    public void setAccessToken(Boolean access_token) {
+        this.access_token = access_token;
     }
 
-    @Override
+  /*  @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -82,7 +62,7 @@ public class Account {
 
     @Override
     public int hashCode() {
-        return Objects.hash(accountId, firstName, lastName, email, password);
+        return Objects.hash(accountId, email, password);
     }
 
     @Override
@@ -95,4 +75,6 @@ public class Account {
                 ", password='" + password + '\'' +
                 '}';
     }
+    */
+
 }

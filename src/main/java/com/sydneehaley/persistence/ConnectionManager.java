@@ -38,4 +38,8 @@ public class ConnectionManager {
     System.out.println("Connected successfully");
 }
     }
+
+    public static void main(String[] args) {
+        getConnection();
+    }
 }
