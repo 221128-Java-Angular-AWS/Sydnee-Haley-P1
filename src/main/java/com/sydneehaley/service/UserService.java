@@ -27,6 +27,10 @@ public class UserService {
         dao.signInUser(user);
     }
 
+    public Set<User> getCurrentUser(User user) {
+        return dao.getUser(user);
+    }
+
     public Set<User> getAllUsers() {
         return dao.getAllUsers();
     }

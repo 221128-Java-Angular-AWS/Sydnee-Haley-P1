@@ -22,12 +22,21 @@ public class AuthorizeServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Set<User> users = service.getAllUsers();
+        StringBuilder jsonBuilder = new StringBuilder();
+        BufferedReader reader = req.getReader();
+
+        while(reader.ready()) {
+            jsonBuilder.append(reader.readLine());
+        }
+
         ObjectMapper mapper = new ObjectMapper();
-        String json = mapper.writeValueAsString(users);
+        User user = mapper.readValue(jsonBuilder.toString(), User.class);
+        Set<User> currentUser = service.getCurrentUser(user);
+        String json = mapper.writeValueAsString(currentUser);
         resp.setStatus(200);
         resp.getWriter().println(json);
     }
+
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         StringBuilder jsonBuilder = new StringBuilder();

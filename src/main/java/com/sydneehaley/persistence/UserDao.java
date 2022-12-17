@@ -16,7 +16,7 @@ public class UserDao {
 
     public void createUser(User user) {
         try {
-            String sql = "INSERT INTO users (access_token, email, first_name, last_name, organization, password, profile_image, privileges, session_token) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO users (access_token, email, first_name, last_name, organization, password, profile_image, privileges) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             // pstmt.setObject(2, user.getAccountId());
             pstmt.setBoolean(1, user.getAccessToken());
@@ -27,7 +27,6 @@ public class UserDao {
             pstmt.setString(6, user.getPassword());
             pstmt.setString(7, user.getProfileImage());
             pstmt.setString(8, user.getPrivileges());
-            pstmt.setBoolean(9, user.getSessionToken());
             System.out.println(pstmt);
             pstmt.executeUpdate();
 
@@ -68,12 +67,11 @@ public class UserDao {
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setBoolean(1, true);
             pstmt.setString(2, user.getEmail());
-            ResultSet rsUpdate = pstmt.executeQuery();
+            System.out.println(pstmt);
+            pstmt.executeUpdate();
         } catch (SQLException e) {
         throw new RuntimeException(e);
     }
-
-
     }
 
     public Set<User> getAllUsers() {
@@ -90,6 +88,26 @@ public class UserDao {
                results.add(user);
             }
             return results;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Set<User> getUser(User user) {
+        try {
+            String sql = "SELECT * FROM users WHERE email = ?";
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setString(1, user.getEmail());
+            System.out.println(pstmt);
+            ResultSet rs = pstmt.executeQuery();
+            Set<User> result = new HashSet<>();
+
+           while(rs.next()) {
+                User currentUser = new User((java.util.UUID) rs.getObject("id"), rs.getBoolean("access_token"), rs.getString("email"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("organization"), rs.getString("password"), rs.getString("profile_image"), rs.getString("privileges"), rs.getBoolean("session_token"));
+               result.add(user);
+           }
+            return result;
         } catch (SQLException e) {
             e.printStackTrace();
         }
