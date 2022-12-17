@@ -1,6 +1,6 @@
 package com.sydneehaley.service;
-import com.sydneehaley.persistence.AccountDao;
-import com.sydneehaley.pojos.Account;
+import com.sydneehaley.exceptions.PasswordIncorrectException;
+import com.sydneehaley.exceptions.UserNotFoundException;
 
 import java.util.Set;
 
@@ -13,11 +13,17 @@ public class AccountService {
         this.dao = dao;
     }
 
-    public void registerNewUser(Account account) {
-        //we can add in this layer other business logic
-        //validation - user input
-        //logging
+    public void registerNewAccount(Account account) {
         dao.createAccount(account);
+    }
+
+
+    public Account authenticateUser(Account account) throws UserNotFoundException, PasswordIncorrectException  {
+        return dao.auth(account.getEmail(), account.getPassword());
+    }
+
+    public Account authenticateUser(String email, String password) throws UserNotFoundException, PasswordIncorrectException {
+        return dao.auth(email, password);
     }
 
 

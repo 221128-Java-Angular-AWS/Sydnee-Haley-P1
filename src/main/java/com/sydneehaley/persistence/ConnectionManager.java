@@ -39,7 +39,5 @@ public class ConnectionManager {
 }
     }
 
-    public static void main(String[] args) {
-        getConnection();
-    }
+
 }

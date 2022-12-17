@@ -1,4 +1,4 @@
-package com.sydneehaley.servlets;
+package com.sydneehaley.servlet;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

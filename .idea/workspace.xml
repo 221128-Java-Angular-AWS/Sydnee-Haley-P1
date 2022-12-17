@@ -5,15 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5cc199fd-4cb6-457e-99d9-baa99aea819b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/exceptions/PasswordIncorrectException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/exceptions/UserNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/AuthServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/AuthorizeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/CorsFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/AccountDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/AccountDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/AdminDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/AdminDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/ConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/pojos/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/pojos/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlets/AccountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlets/AccountServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlets/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlets/Listener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/pojos/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/model/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/pojos/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/model/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/pojos/Tickets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/model/Tickets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/pojos/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlets/AccountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/AccountServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlets/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/AdminServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlets/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/Listener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlets/TicketServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/TicketServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlets/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/UserServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,8 +82,8 @@
   }
 }</component>
   <component name="RunManager" selected="Smart Tomcat.Server">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sydneehaley.Main" />
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sydneehaley.App" />
       <module name="Sydnee-Haley-P1" />
       <extension name="coverage">
         <pattern>
@@ -111,7 +127,7 @@
       <predefined_log_file id="Tomcat Catalina Log" />
       <predefined_log_file id="Tomcat Manager Log" />
       <predefined_log_file id="Tomcat Host Manager Log" />
-      <option name="contextPath" value="/ERS" />
+      <option name="contextPath" value="/ers" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
       <option name="envOptions">
         <map />
@@ -135,8 +151,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.com.sydneehaley.persistence.ConnectionManager" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.com.sydneehaley.persistence.ConnectionManager" />
       </list>
     </recent_temporary>
   </component>
@@ -161,5 +177,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.postgresql.util.PSQLException" package="org.postgresql.util" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
