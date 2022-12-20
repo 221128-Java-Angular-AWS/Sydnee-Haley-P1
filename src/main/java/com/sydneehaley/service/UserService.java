@@ -23,12 +23,16 @@ public class UserService {
         return dao.auth(user.getEmail(), user.getPassword());
     }
 
-    public void signIn(User user) {
-        dao.signInUser(user);
+    public void getSession(User user) {
+        dao.beginSession(user);
     }
 
-    public Set<User> getCurrentUser(User user) {
-        return dao.getUser(user);
+    public void closeSession(User user) {
+        dao.endSession(user);
+    }
+
+    public User getCurrentUser(String email) {
+        return dao.getUser(email);
     }
 
     public Set<User> getAllUsers() {

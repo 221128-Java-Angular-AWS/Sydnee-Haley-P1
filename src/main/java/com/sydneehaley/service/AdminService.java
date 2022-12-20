@@ -1,6 +1,10 @@
 package com.sydneehaley.service;
-import com.sydneehaley.persistence.AdminDao;
+
+import com.sydneehaley.exceptions.PasswordIncorrectException;
+import com.sydneehaley.exceptions.UserNotFoundException;
 import com.sydneehaley.model.Admin;
+import com.sydneehaley.model.User;
+import com.sydneehaley.persistence.AdminDao;
 
 import java.util.Set;
 
@@ -8,17 +12,18 @@ public class AdminService {
 
     private AdminDao dao;
 
-
     public AdminService(AdminDao dao) {
         this.dao = dao;
     }
 
-    /*  public void registerNewAdmin(Admin admin) {
-        dao.createAdmin(admin);
+
+    public Admin authenticateAdmin(Admin admin) throws UserNotFoundException, PasswordIncorrectException {
+        return dao.auth(admin.getEmail(), admin.getPassword());
     }
 
-*/
-    public Set<Admin> getAllAdmins() {
-        return dao.getAllAdmins();
+    public Admin getCurrentAdmin(String email) {
+        return dao.getAdmin(email);
     }
+
 }
+

@@ -8,7 +8,7 @@ import org.eclipse.persistence.annotations.TypeConverter;
 import java.util.UUID;
 
 public class User {
-    @JsonProperty("account_id")
+    @JsonProperty("id")
     @Id
     @TypeConverter(name = "uuidConverter", dataType = Object.class, objectType = UUID.class)
     private UUID id;

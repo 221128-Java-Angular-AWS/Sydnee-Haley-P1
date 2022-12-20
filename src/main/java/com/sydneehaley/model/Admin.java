@@ -1,15 +1,22 @@
 package com.sydneehaley.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Id;
+import org.eclipse.persistence.annotations.TypeConverter;
+
+import java.util.UUID;
 
 public class Admin {
     @JsonProperty("id")
-    private String id;
-    @JsonProperty("user_id")
-    private String userId;
+    @Id
+    @TypeConverter(name = "uuidConverter", dataType = Object.class, objectType = UUID.class)
+    private UUID id;
+    @JsonProperty("email")
+    private String email;
 
-    @JsonProperty("inviteKey")
-    private boolean inviteKey;
+    @JsonProperty("password")
+    private String password;
+
     @JsonProperty("management")
     private boolean management;
     @JsonProperty("admin")
@@ -19,35 +26,36 @@ public class Admin {
     public Admin() {
     }
 
-    public Admin(String userId, boolean admin, boolean inviteKey, boolean management) {
-        this.userId = userId;
-        this.admin = admin;
-        this.inviteKey = inviteKey;
-        this.management = management;
-    }
-
-    public Admin(String id, String userId, boolean admin, boolean inviteKey, boolean management) {
+    public Admin(UUID id, String email, String password, boolean admin,  boolean management) {
         this.id = id;
-        this.userId = userId;
+        this.email = email;
+        this.password = password;
         this.admin = admin;
-        this.inviteKey = inviteKey;
         this.management = management;
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String accountId) {
+    public void setId(UUID accountId) {
         this.id = id;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserId(String userId) {
-        this.id = userId;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public boolean getAdmin() {
@@ -56,14 +64,6 @@ public class Admin {
 
     public void setAdmin(boolean admin) {
         this.admin = admin;
-    }
-
-    public boolean getInviteKey() {
-        return inviteKey;
-    }
-
-    public void setInviteKey(boolean inviteKey) {
-        this.inviteKey = inviteKey;
     }
 
     public boolean getManagement() {

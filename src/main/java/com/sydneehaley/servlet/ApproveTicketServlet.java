@@ -1,8 +1,8 @@
 package com.sydneehaley.servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sydneehaley.persistence.TicketDao;
-import com.sydneehaley.service.TicketService;
+import com.sydneehaley.persistence.ApproveTicketDao;
+import com.sydneehaley.service.ApproveTicketService;
 import com.sydneehaley.model.Ticket;
 
 import javax.servlet.ServletException;
@@ -12,21 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Set;
 
-public class TicketServlet extends HttpServlet {
-    private TicketService service;
+public class ApproveTicketServlet extends HttpServlet {
+    private ApproveTicketService service;
 
     public void init() throws ServletException {
-        this.service = new TicketService(new TicketDao());
-    }
-
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Set<Ticket> tickets = service.getTickets();
-        ObjectMapper mapper = new ObjectMapper();
-        String json = mapper.writeValueAsString(tickets);
-        resp.setStatus(200);
-        resp.getWriter().println(json);
+        this.service = new ApproveTicketService(new ApproveTicketDao());
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -40,7 +31,7 @@ public class TicketServlet extends HttpServlet {
 
         ObjectMapper mapper = new ObjectMapper();
         Ticket ticket = mapper.readValue(jsonBuilder.toString(), Ticket.class);
-        service.newTicket(ticket);
+        service.approveATicket(ticket);
         System.out.println(ticket);
         resp.setStatus(200);
     }

@@ -26,15 +26,6 @@
         <url-pattern>/users</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>adminServlet</servlet-name>
-        <servlet-class>com.sydneehaley.servlet.AdminServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>adminServlet</servlet-name>
-        <url-pattern>/admins</url-pattern>
-    </servlet-mapping>
 
     <servlet>
         <servlet-name>authServlet</servlet-name>
@@ -47,13 +38,66 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>authorizeServlet</servlet-name>
-        <servlet-class>com.sydneehaley.servlet.AuthorizeServlet</servlet-class>
+        <servlet-name>storeUserServlet</servlet-name>
+        <servlet-class>com.sydneehaley.servlet.CurrentUserServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>authorizeServlet</servlet-name>
-        <url-pattern>/users/auth/session</url-pattern>
+        <servlet-name>storeUserServlet</servlet-name>
+        <url-pattern>/users/auth/session/user</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>ticketServlet</servlet-name>
+        <servlet-class>com.sydneehaley.servlet.TicketServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ticketServlet</servlet-name>
+        <url-pattern>/tickets</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>adminAuthServlet</servlet-name>
+        <servlet-class>com.sydneehaley.servlet.AdminServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>adminAuthServlet</servlet-name>
+        <url-pattern>/auth/admin</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>updateServlet</servlet-name>
+        <servlet-class>com.sydneehaley.servlet.UpdateTicketServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>updateServlet</servlet-name>
+        <url-pattern>/admins/update</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>approveServlet</servlet-name>
+        <servlet-class>com.sydneehaley.servlet.ApproveTicketServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>approveServlet</servlet-name>
+        <url-pattern>/admins/approve</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>deleteServlet</servlet-name>
+        <servlet-class>com.sydneehaley.servlet.DeleteTicketServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>deleteServlet</servlet-name>
+        <url-pattern>/admins/delete</url-pattern>
     </servlet-mapping>
 
     <filter>

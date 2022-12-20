@@ -33,7 +33,6 @@ public class UserDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     public User auth(String email, String password) throws UserNotFoundException, PasswordIncorrectException {
@@ -50,6 +49,7 @@ public class UserDao {
                     rs.getString("email"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("organization"), rs.getString("password"),
                     rs.getString("profile_image"),rs.getString("privileges"), rs.getBoolean("session_token"));
 
+
             if(user.getPassword().equals(password)) {
                 return user;
             }
@@ -61,7 +61,7 @@ public class UserDao {
     }
 
 
-    public void signInUser(User user)  {
+    public void beginSession(User user)  {
         try{
             String sql = "UPDATE users " + "SET session_token = ? " + "WHERE email = ?";
             PreparedStatement pstmt = connection.prepareStatement(sql);
@@ -72,6 +72,19 @@ public class UserDao {
         } catch (SQLException e) {
         throw new RuntimeException(e);
     }
+    }
+
+    public void endSession(User user)  {
+        try{
+            String sql = "UPDATE users " + "SET session_token = ? " + "WHERE email = ?";
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setBoolean(1, false);
+            pstmt.setString(2, user.getEmail());
+            System.out.println(pstmt);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public Set<User> getAllUsers() {
@@ -94,20 +107,20 @@ public class UserDao {
         return null;
     }
 
-    public Set<User> getUser(User user) {
+    public User getUser(String email) {
+        User user = new User();
         try {
             String sql = "SELECT * FROM users WHERE email = ?";
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setString(1, user.getEmail());
+            pstmt.setString(1, email);
             System.out.println(pstmt);
             ResultSet rs = pstmt.executeQuery();
-            Set<User> result = new HashSet<>();
 
-           while(rs.next()) {
-                User currentUser = new User((java.util.UUID) rs.getObject("id"), rs.getBoolean("access_token"), rs.getString("email"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("organization"), rs.getString("password"), rs.getString("profile_image"), rs.getString("privileges"), rs.getBoolean("session_token"));
-               result.add(user);
+
+           if(rs.next()) {
+               return user = new User((java.util.UUID) rs.getObject("id"), rs.getBoolean("access_token"), rs.getString("email"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("organization"), rs.getString("password"), rs.getString("profile_image"), rs.getString("privileges"), rs.getBoolean("session_token"));
            }
-            return result;
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
