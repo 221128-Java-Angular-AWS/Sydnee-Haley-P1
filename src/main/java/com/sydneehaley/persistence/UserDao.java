@@ -8,7 +8,7 @@ import com.sydneehaley.exceptions.PasswordIncorrectException;
 import com.sydneehaley.exceptions.UserNotFoundException;
 import com.sydneehaley.model.User;
 public class UserDao {
-    private Connection connection; // empty connection object
+    private Connection connection;
 
     public UserDao() {
         this.connection = ConnectionManager.getConnection();
@@ -16,17 +16,15 @@ public class UserDao {
 
     public void createUser(User user) {
         try {
-            String sql = "INSERT INTO users (access_token, email, first_name, last_name, organization, password, profile_image, privileges) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO users (email, first_name, last_name, organization, password, profile_image, privileges) VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            // pstmt.setObject(2, user.getAccountId());
-            pstmt.setBoolean(1, user.getAccessToken());
-            pstmt.setString(2, user.getEmail());
-            pstmt.setString(3, user.getFirstName());
-            pstmt.setString(4, user.getLastName());
-            pstmt.setString(5, user.getOrganization());
-            pstmt.setString(6, user.getPassword());
-            pstmt.setString(7, user.getProfileImage());
-            pstmt.setString(8, user.getPrivileges());
+            pstmt.setString(1, user.getEmail());
+            pstmt.setString(2, user.getFirstName());
+            pstmt.setString(3, user.getLastName());
+            pstmt.setString(4, user.getOrganization());
+            pstmt.setString(5, user.getPassword());
+            pstmt.setString(6, user.getProfileImage());
+            pstmt.setString(7, user.getPrivileges());
             System.out.println(pstmt);
             pstmt.executeUpdate();
 
@@ -57,34 +55,6 @@ public class UserDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-    }
-
-
-    public void beginSession(User user)  {
-        try{
-            String sql = "UPDATE users " + "SET session_token = ? " + "WHERE email = ?";
-            PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setBoolean(1, true);
-            pstmt.setString(2, user.getEmail());
-            System.out.println(pstmt);
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-        throw new RuntimeException(e);
-    }
-    }
-
-    public void endSession(User user)  {
-        try{
-            String sql = "UPDATE users " + "SET session_token = ? " + "WHERE email = ?";
-            PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setBoolean(1, false);
-            pstmt.setString(2, user.getEmail());
-            System.out.println(pstmt);
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     public Set<User> getAllUsers() {
@@ -106,25 +76,4 @@ public class UserDao {
         }
         return null;
     }
-
-    public User getUser(String email) {
-        User user = new User();
-        try {
-            String sql = "SELECT * FROM users WHERE email = ?";
-            PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setString(1, email);
-            System.out.println(pstmt);
-            ResultSet rs = pstmt.executeQuery();
-
-
-           if(rs.next()) {
-               return user = new User((java.util.UUID) rs.getObject("id"), rs.getBoolean("access_token"), rs.getString("email"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("organization"), rs.getString("password"), rs.getString("profile_image"), rs.getString("privileges"), rs.getBoolean("session_token"));
-           }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
 }

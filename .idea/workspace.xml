@@ -5,32 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5cc199fd-4cb6-457e-99d9-baa99aea819b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/ApproveTicketDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/DeleteTicketDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/UpdateTicketDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/ApproveTicketService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/DeleteTicketService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/TicketService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/UpdateTicketService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/ApproveTicketServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/CurrentUserServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/DeleteTicketServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/EndSessionServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/UpdateTicketServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/model/Session.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/SessionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/SessionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/FilterTicketsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/SessionServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/model/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/model/Tickets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/model/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/AdminDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/AdminDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/ApproveTicketDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/DeleteTicketDao.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/TicketDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/UpdateTicketDao.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/ApproveTicketService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/DeleteTicketService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/TicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/UpdateTicketService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/UsersService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/AdminServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/ApproveTicketServlet.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/AuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/AuthServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/AuthorizeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/BeginSessionServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/CorsFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/CorsFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/BeginSessionServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/CurrentUserServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/DeleteTicketServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/EndSessionServlet.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/TicketServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/TicketServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/UpdateTicketServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/UsersServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

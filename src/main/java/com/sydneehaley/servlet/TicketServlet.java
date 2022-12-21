@@ -42,6 +42,38 @@ public class TicketServlet extends HttpServlet {
         Ticket ticket = mapper.readValue(jsonBuilder.toString(), Ticket.class);
         service.newTicket(ticket);
         System.out.println(ticket);
+        resp.setStatus(201);
+    }
+
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        StringBuilder jsonBuilder = new StringBuilder();
+        BufferedReader reader = req.getReader();
+
+        while(reader.ready()) {
+            jsonBuilder.append(reader.readLine());
+        }
+
+        ObjectMapper mapper = new ObjectMapper();
+        Ticket ticket = mapper.readValue(jsonBuilder.toString(), Ticket.class);
+        service.updateATicket(ticket);
+        System.out.println(ticket);
+        resp.setStatus(200);
+    }
+
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        StringBuilder jsonBuilder = new StringBuilder();
+        BufferedReader reader = req.getReader();
+
+        while(reader.ready()) {
+            jsonBuilder.append(reader.readLine());
+        }
+
+        ObjectMapper mapper = new ObjectMapper();
+        Ticket ticket = mapper.readValue(jsonBuilder.toString(), Ticket.class);
+        service.deleteATicket(ticket);
+        System.out.println(ticket);
         resp.setStatus(200);
     }
 }

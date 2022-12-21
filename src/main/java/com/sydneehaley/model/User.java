@@ -1,7 +1,6 @@
 package com.sydneehaley.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
 import jakarta.persistence.Id;
 import org.eclipse.persistence.annotations.TypeConverter;
 
@@ -38,8 +37,6 @@ public class User {
 
     @JsonProperty("session_token")
     private boolean sessionToken;
-
-
 
     public User() {
     }

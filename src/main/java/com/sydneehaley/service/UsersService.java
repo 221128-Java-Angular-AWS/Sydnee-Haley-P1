@@ -7,32 +7,20 @@ import com.sydneehaley.persistence.UserDao;
 
 import java.util.Set;
 
-public class UserService {
+public class UsersService {
 
     private UserDao dao;
 
-    public UserService(UserDao dao) {
+    public UsersService(UserDao dao) {
         this.dao = dao;
     }
 
-    public void registerNewUser(User user) {
+    public void createNewUser(User user) {
         dao.createUser(user);
     }
 
     public User authenticateUser(User user) throws UserNotFoundException, PasswordIncorrectException {
         return dao.auth(user.getEmail(), user.getPassword());
-    }
-
-    public void getSession(User user) {
-        dao.beginSession(user);
-    }
-
-    public void closeSession(User user) {
-        dao.endSession(user);
-    }
-
-    public User getCurrentUser(String email) {
-        return dao.getUser(email);
     }
 
     public Set<User> getAllUsers() {

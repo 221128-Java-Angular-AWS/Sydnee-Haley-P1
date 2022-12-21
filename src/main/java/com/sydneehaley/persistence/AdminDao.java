@@ -3,13 +3,13 @@ package com.sydneehaley.persistence;
 import com.sydneehaley.exceptions.PasswordIncorrectException;
 import com.sydneehaley.exceptions.UserNotFoundException;
 import com.sydneehaley.model.Admin;
-import com.sydneehaley.model.User;
+
 
 import java.sql.*;
 
 public class AdminDao {
 
-    private Connection connection; // empty connection object
+    private Connection connection;
 
     public AdminDao() {
         this.connection = ConnectionManager.getConnection();
@@ -36,7 +36,6 @@ public class AdminDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     public Admin getAdmin(String email) {

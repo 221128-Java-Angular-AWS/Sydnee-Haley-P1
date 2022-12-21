@@ -17,12 +17,12 @@
     </listener>
 
     <servlet>
-        <servlet-name>userServlet</servlet-name>
-        <servlet-class>com.sydneehaley.servlet.UserServlet</servlet-class>
+        <servlet-name>usersServlet</servlet-name>
+        <servlet-class>com.sydneehaley.servlet.UsersServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>userServlet</servlet-name>
+        <servlet-name>usersServlet</servlet-name>
         <url-pattern>/users</url-pattern>
     </servlet-mapping>
 
@@ -34,19 +34,19 @@
 
     <servlet-mapping>
         <servlet-name>authServlet</servlet-name>
-        <url-pattern>/users/auth</url-pattern>
+        <url-pattern>/auth/user</url-pattern>
     </servlet-mapping>
 
+
     <servlet>
-        <servlet-name>storeUserServlet</servlet-name>
-        <servlet-class>com.sydneehaley.servlet.CurrentUserServlet</servlet-class>
+        <servlet-name>sessionServlet</servlet-name>
+        <servlet-class>com.sydneehaley.servlet.SessionServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>storeUserServlet</servlet-name>
-        <url-pattern>/users/auth/session/user</url-pattern>
+        <servlet-name>sessionServlet</servlet-name>
+        <url-pattern>/auth/user/session</url-pattern>
     </servlet-mapping>
-
 
     <servlet>
         <servlet-name>ticketServlet</servlet-name>
@@ -57,6 +57,17 @@
         <servlet-name>ticketServlet</servlet-name>
         <url-pattern>/tickets</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>filterTicketsServlet</servlet-name>
+        <servlet-class>com.sydneehaley.servlet.FilterTicketsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>filterTicketsServlet</servlet-name>
+        <url-pattern>/tickets/filter</url-pattern>
+    </servlet-mapping>
+
 
 
     <servlet>
@@ -69,35 +80,14 @@
         <url-pattern>/auth/admin</url-pattern>
     </servlet-mapping>
 
-
     <servlet>
         <servlet-name>updateServlet</servlet-name>
-        <servlet-class>com.sydneehaley.servlet.UpdateTicketServlet</servlet-class>
+        <servlet-class>com.sydneehaley.servlet.TicketServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>updateServlet</servlet-name>
-        <url-pattern>/admins/update</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>approveServlet</servlet-name>
-        <servlet-class>com.sydneehaley.servlet.ApproveTicketServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>approveServlet</servlet-name>
-        <url-pattern>/admins/approve</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>deleteServlet</servlet-name>
-        <servlet-class>com.sydneehaley.servlet.DeleteTicketServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>deleteServlet</servlet-name>
-        <url-pattern>/admins/delete</url-pattern>
+        <url-pattern>/admin/ticket</url-pattern>
     </servlet-mapping>
 
     <filter>

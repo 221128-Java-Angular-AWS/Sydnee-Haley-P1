@@ -18,8 +18,20 @@ public class TicketService {
         dao.createTicket(ticket);
     }
 
+    public void updateATicket(Ticket ticket) {
+        dao.updateTicket(ticket);
+    }
+
+    public void deleteATicket(Ticket ticket) {
+        dao.deleteTicket(ticket.getId());
+    }
+
     public Set<Ticket> getTickets() {
         return dao.getAllTickets();
+    }
+
+    public Set<Ticket> getTicketsByFilter(String status) {
+        return dao.filterTickets(status);
     }
 }
 
