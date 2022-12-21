@@ -56,7 +56,6 @@ public class UserDao {
             throw new RuntimeException(e);
         }
     }
-
     public Set<User> getAllUsers() {
         try {
             String sql = "SELECT * FROM users";

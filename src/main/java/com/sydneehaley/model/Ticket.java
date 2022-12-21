@@ -29,13 +29,12 @@ public class Ticket {
     private String notes;
     @JsonProperty("status")
     private String status;
-    @JsonProperty("approval")
-    private boolean approval;
+
 
     public Ticket() {
     }
 
-    public Ticket(UUID id, UUID userId, String subject, double amount, String accountNumber, Date date, String notes, String status, boolean approval) {
+    public Ticket(UUID id, UUID userId, String subject, double amount, String accountNumber, Date date, String notes, String status) {
         this.id = id;
         this.userId = userId;
         this.subject = subject;
@@ -44,7 +43,6 @@ public class Ticket {
         this.date = date;
         this.notes = notes;
         this.status = status;
-        this.approval = approval;
     }
 
     public UUID getId() {
@@ -111,11 +109,5 @@ public class Ticket {
         this.status = status;
     }
 
-    public boolean getApproval() {
-        return approval;
-    }
 
-    public void setApproval(boolean date) {
-        this.approval = approval;
-    }
 }
