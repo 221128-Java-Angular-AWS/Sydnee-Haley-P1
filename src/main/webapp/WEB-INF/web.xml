@@ -68,6 +68,16 @@
         <url-pattern>/tickets/filter</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>filterTicketsByIdServlet</servlet-name>
+        <servlet-class>com.sydneehaley.servlet.UserTicketsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>filterTicketsByIdServlet</servlet-name>
+        <url-pattern>/tickets/user</url-pattern>
+    </servlet-mapping>
+
 
 
     <servlet>

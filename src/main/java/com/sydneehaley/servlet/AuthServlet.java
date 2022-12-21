@@ -26,11 +26,12 @@ public class AuthServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        User user = mapper.readValue(req.getInputStream(), User.class);
+        String email = req.getParameter("email");
+        String password = req.getParameter("password");
+        // User user = mapper.readValue(req.getInputStream(), User.class);
 
         try {
-            User authenticatedUser = service.authenticateUser(user);
+            User authenticatedUser = service.authenticateUser(email, password);
             resp.setStatus(200);
             resp.getWriter().println(mapper.writeValueAsString(authenticatedUser));
 

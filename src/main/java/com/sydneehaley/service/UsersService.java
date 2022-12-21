@@ -19,8 +19,8 @@ public class UsersService {
         dao.createUser(user);
     }
 
-    public User authenticateUser(User user) throws UserNotFoundException, PasswordIncorrectException {
-        return dao.auth(user.getEmail(), user.getPassword());
+    public User authenticateUser(String email, String password) throws UserNotFoundException, PasswordIncorrectException {
+        return dao.auth(email, password);
     }
 
     public Set<User> getAllUsers() {

@@ -96,4 +96,24 @@ public class TicketDao {
         }
         return null;
     }
+
+    public Set<Ticket> filterTicketsById(UUID user_id) {
+        try {
+            String sql = "SELECT * FROM ticket WHERE user_id=?";
+            PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            pstmt.setObject(1, user_id);
+            ResultSet rs = pstmt.executeQuery();
+            Set<Ticket> results = new HashSet<>();
+
+            while(rs.next()) {
+                Ticket ticket = new Ticket((java.util.UUID) rs.getObject("id"), (java.util.UUID) rs.getObject("user_id"), rs.getString("subject"), rs.getDouble("amount"),
+                        rs.getString("account_number"), rs.getDate("date"), rs.getString("notes"), rs.getString("status"));
+                results.add(ticket);
+            }
+            return results;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

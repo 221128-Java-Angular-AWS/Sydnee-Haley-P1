@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5cc199fd-4cb6-457e-99d9-baa99aea819b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/UserTicketsServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/TicketDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/persistence/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/TicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/service/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/AuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sydneehaley/servlet/AuthServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

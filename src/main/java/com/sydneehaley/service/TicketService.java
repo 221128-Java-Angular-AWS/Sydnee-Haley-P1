@@ -33,5 +33,9 @@ public class TicketService {
     public Set<Ticket> getTicketsByFilter(String status) {
         return dao.filterTickets(status);
     }
+
+    public Set<Ticket> getTicketsByFilterId(Ticket ticket) {
+        return dao.filterTicketsById(ticket.getUserId());
+    }
 }
 
